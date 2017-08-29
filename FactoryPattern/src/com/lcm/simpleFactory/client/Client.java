@@ -13,12 +13,14 @@ import com.lcm.simpleFactory.ShapeFactory;
 public class Client {
 
     public static void main(String[] args) {
+        Shape shape;
 
-        Shape shape = ShapeFactory.getShape("round");
+        shape = ShapeFactory.getShape("round");
         shape.draw();
+        shape.erase();
 
-        Shape triangle = ShapeFactory.getShape("triangle");
-        triangle.draw();
-
+        shape = ShapeFactory.getShape("triangle");
+        shape.draw();
+        shape.erase();
     }
 }

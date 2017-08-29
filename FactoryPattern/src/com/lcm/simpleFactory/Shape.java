@@ -10,4 +10,6 @@ package com.lcm.simpleFactory;
 public interface Shape {
 
     void draw();
+
+    void erase();
 }

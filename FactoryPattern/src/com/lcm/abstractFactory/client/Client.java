@@ -9,7 +9,7 @@ import com.lcm.abstractFactory.factory.SysFactory;
  * ****************************************************************
  * Author:LCM
  * Date: 2017/8/29 下午4:14
- * Desc:
+ * Desc: 抽象工厂模式
  * *****************************************************************
  */
 public class Client {
