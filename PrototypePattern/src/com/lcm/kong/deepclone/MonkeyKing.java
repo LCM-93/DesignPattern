@@ -1,4 +1,6 @@
-package com.lcm.kong;
+package com.lcm.kong.deepclone;
+
+import java.io.*;
 
 /**
  * ****************************************************************
@@ -7,7 +9,7 @@ package com.lcm.kong;
  * Desc:
  * *****************************************************************
  */
-public class MonkeyKing implements Cloneable {
+public class MonkeyKing implements Serializable {
 
     private int height;
 
@@ -52,15 +54,26 @@ public class MonkeyKing implements Cloneable {
         return goldHoopStick;
     }
 
-    @Override
-    protected Object clone() {
-        MonkeyKing monkeyKing = null;
+
+    public MonkeyKing deepClone() {
+        Object object = null;
         try {
-            monkeyKing = (MonkeyKing) super.clone();
-            return monkeyKing;
-        } catch (CloneNotSupportedException e) {
+            //将对象写入流中
+            ByteArrayOutputStream bao = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(bao);
+            oos.writeObject(this);
+
+            //将对象从流中取出
+            ByteArrayInputStream bis = new ByteArrayInputStream(bao.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(bis);
+            object = ois.readObject();
+            return (MonkeyKing) object;
+        } catch (IOException e) {
             e.printStackTrace();
-            return monkeyKing;
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         }
+
+        return null;
     }
 }
