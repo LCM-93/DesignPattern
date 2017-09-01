@@ -9,7 +9,6 @@ package com.lcm.prototype;
  */
 public interface Prototype {
 
-
     public Prototype clone();
 
 }
