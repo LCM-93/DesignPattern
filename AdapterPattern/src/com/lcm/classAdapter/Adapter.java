@@ -14,8 +14,4 @@ public class Adapter extends Adaptee implements Target {
         specificRequest();
     }
 
-    @Override
-    public void specificRequest() {
-        super.specificRequest();
-    }
 }

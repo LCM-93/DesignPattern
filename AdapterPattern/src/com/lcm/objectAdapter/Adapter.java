@@ -9,10 +9,10 @@ package com.lcm.objectAdapter;
  */
 public class Adapter implements Target {
 
-    private final Adaptee adaptee;
+    private  Adaptee adaptee;
 
     public Adapter() {
-        adaptee = new Adaptee();
+        this.adaptee = new Adaptee();
     }
 
     @Override
