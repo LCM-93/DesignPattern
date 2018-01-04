@@ -11,7 +11,6 @@ public class ProxySubject extends Subject {
 
     private RealSubject realSubject = new RealSubject();
 
-
     public void preRequest(){
         System.out.println("代理类：请求前操作");
     }
